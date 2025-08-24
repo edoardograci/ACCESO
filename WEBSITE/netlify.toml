@@ -14,17 +14,20 @@
   to = "/static/:splat"
   status = 200
 
+# Reverse proxy for /map (more specific rules first)
 [[redirects]]
   from = "/map/*"
   to = "https://acceso-integration.onrender.com/:splat"
   status = 200
   force = true
+  headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
 
 [[redirects]]
   from = "/map"
   to = "https://acceso-integration.onrender.com/"
   status = 200
   force = true
+  headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
 
 # Route everything through the function without changing the URL
 [[redirects]]
@@ -32,4 +35,5 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
 
