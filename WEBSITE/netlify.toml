@@ -17,14 +17,7 @@
 # Fix font request - redirect root font request to integration site
 [[redirects]]
   from = "/PPSupplySans-Variable.ttf"
-  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
-  status = 200
-  force = true
-
-# Handle font requests that come through /map path
-[[redirects]]
-  from = "/map/PPSupplySans-Variable.ttf"
-  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
+  to = "/map/PPSupplySans-Variable.ttf"
   status = 200
   force = true
 
@@ -68,3 +61,4 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
