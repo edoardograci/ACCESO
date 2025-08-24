@@ -14,6 +14,31 @@
   to = "/static/:splat"
   status = 200
 
+# Proxy font files from integration site
+[[redirects]]
+  from = "/PPSupplySans-Variable.ttf"
+  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*.ttf"
+  to = "https://acceso-integration.onrender.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*.woff"
+  to = "https://acceso-integration.onrender.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*.woff2"
+  to = "https://acceso-integration.onrender.com/:splat"
+  status = 200
+  force = true
+
 # Reverse proxy for /map (more specific rules first)
 [[redirects]]
   from = "/map/*"
@@ -29,11 +54,9 @@
   force = true
   headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
 
-# Route everything through the function without changing the URL
+# Route everything through the function without changing the URL (LAST)
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
-
-
