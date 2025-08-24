@@ -1,38 +1,29 @@
-# Serve robots.txt directly
+# Serve robots.txt and sitemap directly
 /robots.txt    /robots.txt    200
-
-# Serve sitemap.xml directly
 /sitemap.xml    /sitemap.xml    200
 
-# Handle Framer assets directly
-/assets/*    https://empathic-curiosity-142704.framer.app/assets/:splat    200!
+# Handle Framer assets directly  
+/assets/*    https://empathic-curiosity-142704.framer.app/assets/:splat    200
 
-# Proxy ALL common asset extensions from integration site
-/*.css    https://acceso-integration.onrender.com/:splat    200!
-/*.js    https://acceso-integration.onrender.com/:splat    200!
-/*.png    https://acceso-integration.onrender.com/:splat    200!
-/*.jpg    https://acceso-integration.onrender.com/:splat    200!
-/*.jpeg    https://acceso-integration.onrender.com/:splat    200!
-/*.gif    https://acceso-integration.onrender.com/:splat    200!
-/*.svg    https://acceso-integration.onrender.com/:splat    200!
-/*.ico    https://acceso-integration.onrender.com/:splat    200!
-/*.woff    https://acceso-integration.onrender.com/:splat    200!
-/*.woff2    https://acceso-integration.onrender.com/:splat    200!
-/*.ttf    https://acceso-integration.onrender.com/:splat    200!
-/*.json    https://acceso-integration.onrender.com/:splat    200!
+# Proxy specific files from integration site (BEFORE catch-all)
+/style.css    https://acceso-integration.onrender.com/style.css    200
+/script.js    https://acceso-integration.onrender.com/script.js    200
+/icons.js    https://acceso-integration.onrender.com/icons.js    200
 
-# Proxy common folders that might exist
-/public/*    https://acceso-integration.onrender.com/public/:splat    200!
-/static/*    https://acceso-integration.onrender.com/static/:splat    200!
-/dist/*    https://acceso-integration.onrender.com/dist/:splat    200!
-/build/*    https://acceso-integration.onrender.com/build/:splat    200!
+# Proxy file extensions from integration site
+/*.css    https://acceso-integration.onrender.com/:splat    200
+/*.js    https://acceso-integration.onrender.com/:splat    200
+/*.png    https://acceso-integration.onrender.com/:splat    200
+/*.jpg    https://acceso-integration.onrender.com/:splat    200
+/*.svg    https://acceso-integration.onrender.com/:splat    200
+/*.json    https://acceso-integration.onrender.com/:splat    200
 
 # Reverse proxy for /map routes
-/map/*    https://acceso-integration.onrender.com/:splat    200!
-/map    https://acceso-integration.onrender.com/    200!
+/map    https://acceso-integration.onrender.com/    200
+/map/*    https://acceso-integration.onrender.com/:splat    200
 
 # Handle the root path
-/    /.netlify/functions/framer-proxy    200!
+/    /.netlify/functions/framer-proxy    200
 
-# Handle all other paths with splat (AFTER specific routes)
-/*    /.netlify/functions/framer-proxy/:splat    200!
+# Handle all other paths (LAST)
+/*    /.netlify/functions/framer-proxy/:splat    200
