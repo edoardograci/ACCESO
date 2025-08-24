@@ -4,7 +4,7 @@
 # Redirect assets directly from Framer
 [[redirects]]
   from = "/assets/*"
-  to = "https://charismatic-everyone-653587.framer.app/assets/:splat"
+  to = "https://empathic-curiosity-142704.framer.app/assets/:splat"
   status = 200
   force = true
 
