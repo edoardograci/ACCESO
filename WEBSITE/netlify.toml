@@ -14,14 +14,20 @@
   to = "/static/:splat"
   status = 200
 
-# Fix font request - redirect root font request to integration site
+# FONT RULES FIRST - BEFORE /map/* rules
 [[redirects]]
   from = "/PPSupplySans-Variable.ttf"
-  to = "/map/PPSupplySans-Variable.ttf"
+  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
   status = 200
   force = true
 
-# General font file patterns
+[[redirects]]
+  from = "/map/PPSupplySans-Variable.ttf"
+  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
+  status = 200
+  force = true
+
+# General font patterns BEFORE /map/*
 [[redirects]]
   from = "/*.ttf"
   to = "https://acceso-integration.onrender.com/:splat"
@@ -40,17 +46,17 @@
   status = 200
   force = true
 
-# Reverse proxy for /map (more specific rules first)
+# NOW the /map rules (AFTER font rules)
 [[redirects]]
-  from = "/map/*"
-  to = "https://acceso-integration.onrender.com/:splat"
+  from = "/map"
+  to = "https://acceso-integration.onrender.com/"
   status = 200
   force = true
   headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
 
 [[redirects]]
-  from = "/map"
-  to = "https://acceso-integration.onrender.com/"
+  from = "/map/*"
+  to = "https://acceso-integration.onrender.com/:splat"
   status = 200
   force = true
   headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
@@ -61,4 +67,3 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
-
