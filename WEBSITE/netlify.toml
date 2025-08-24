@@ -14,9 +14,22 @@
   to = "/static/:splat"
   status = 200
 
+[[redirects]]
+  from = "/map/*"
+  to = "https://acceso-integration.onrender.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/map"
+  to = "https://acceso-integration.onrender.com/"
+  status = 200
+  force = true
+
 # Route everything through the function without changing the URL
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
