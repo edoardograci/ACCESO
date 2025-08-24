@@ -17,8 +17,8 @@
 # FONT RULES FIRST - BEFORE /map/* rules - WITH CORS HEADERS
 [[redirects]]
   from = "/PPSupplySans-Variable.ttf"
-  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
-  status = 200
+  to = "https://www.google.com"
+  status = 302
   force = true
   headers = {Access-Control-Allow-Origin = "*"}
 
@@ -72,3 +72,4 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
