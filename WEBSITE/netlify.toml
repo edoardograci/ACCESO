@@ -16,7 +16,7 @@
 
 # Proxy font files from integration site
 [[redirects]]
-  from = "/PPSupplySans-Variable.ttf"
+  from = "/map/PPSupplySans-Variable.ttf"
   to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
   status = 200
   force = true
@@ -60,3 +60,4 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
