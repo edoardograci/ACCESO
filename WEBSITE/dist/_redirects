@@ -3,10 +3,9 @@
 /sitemap.xml    /sitemap.xml    200
 
 # Handle Framer assets directly 
-/PPSupplySans-Variable.ttf/* https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf
 /assets/*    https://empathic-curiosity-142704.framer.app/assets/:splat    200
 
-# Proxy specific files from integration site (REMOVE FONT RULES FROM HERE)
+# Proxy specific files from integration site
 /style.css    https://acceso-integration.onrender.com/style.css    200
 /script.js    https://acceso-integration.onrender.com/script.js    200
 /icons.js    https://acceso-integration.onrender.com/icons.js    200
@@ -17,7 +16,6 @@
 
 # Reverse proxy for /map routes
 /map    https://acceso-integration.onrender.com/    200
-/map/PPSupplySans-Variable.ttf https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf
 /map/*    https://acceso-integration.onrender.com/:splat    200
 
 # Handle the root path
