@@ -5,32 +5,14 @@
 # Handle Framer assets directly  
 /assets/*    https://empathic-curiosity-142704.framer.app/assets/:splat    200
 
-# Proxy specific files from integration site
-/PPSupplySans-Variable.ttf    https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf    200!
+# Proxy specific files from integration site (REMOVE FONT RULES FROM HERE)
 /style.css    https://acceso-integration.onrender.com/style.css    200
 /script.js    https://acceso-integration.onrender.com/script.js    200
 /icons.js    https://acceso-integration.onrender.com/icons.js    200
 
-# Proxy font files
-/*.ttf    https://acceso-integration.onrender.com/:splat    200
-/*.woff    https://acceso-integration.onrender.com/:splat    200
-/*.woff2    https://acceso-integration.onrender.com/:splat    200
-/*.otf    https://acceso-integration.onrender.com/:splat    200
-
 # Proxy data endpoints and API calls
 /data    https://acceso-integration.onrender.com/data    200
 /data/*    https://acceso-integration.onrender.com/data/:splat    200
-/api/*    https://acceso-integration.onrender.com/api/:splat    200
-
-# Proxy other common asset types
-/*.css    https://acceso-integration.onrender.com/:splat    200
-/*.js    https://acceso-integration.onrender.com/:splat    200
-/*.png    https://acceso-integration.onrender.com/:splat    200
-/*.jpg    https://acceso-integration.onrender.com/:splat    200
-/*.jpeg    https://acceso-integration.onrender.com/:splat    200
-/*.svg    https://acceso-integration.onrender.com/:splat    200
-/*.json    https://acceso-integration.onrender.com/:splat    200
-/*.ico    https://acceso-integration.onrender.com/:splat    200
 
 # Reverse proxy for /map routes
 /map    https://acceso-integration.onrender.com/    200
