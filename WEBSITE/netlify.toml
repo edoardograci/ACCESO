@@ -14,22 +14,13 @@
   to = "/static/:splat"
   status = 200
 
-# FONT RULES FIRST - BEFORE /map/* rules - WITH CORS HEADERS
+# FONT RULES - MUST BE BEFORE THE CATCH-ALL /*
 [[redirects]]
   from = "/PPSupplySans-Variable.ttf"
   to = "https://www.google.com"
   status = 302
   force = true
-  headers = {Access-Control-Allow-Origin = "*"}
 
-[[redirects]]
-  from = "/map/PPSupplySans-Variable.ttf"
-  to = "https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf"
-  status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = "*"}
-
-# General font patterns BEFORE /map/* - WITH CORS HEADERS
 [[redirects]]
   from = "/*.ttf"
   to = "https://acceso-integration.onrender.com/:splat"
@@ -37,21 +28,7 @@
   force = true
   headers = {Access-Control-Allow-Origin = "*"}
 
-[[redirects]]
-  from = "/*.woff"
-  to = "https://acceso-integration.onrender.com/:splat"
-  status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = "*"}
-
-[[redirects]]
-  from = "/*.woff2"
-  to = "https://acceso-integration.onrender.com/:splat"
-  status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = "*"}
-
-# NOW the /map rules (AFTER font rules)
+# /map rules
 [[redirects]]
   from = "/map"
   to = "https://acceso-integration.onrender.com/"
@@ -66,10 +43,9 @@
   force = true
   headers = {X-Forwarded-Host = "acceso.edoardograci.com"}
 
-# Route everything through the function without changing the URL (LAST)
+# CATCH-ALL RULE MUST BE LAST
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
-
