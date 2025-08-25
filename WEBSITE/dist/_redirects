@@ -5,7 +5,7 @@
 # Handle Framer assets directly 
 /assets/*    https://empathic-curiosity-142704.framer.app/assets/:splat    200
 
-/PPSupplySans-Variable.ttf    https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf    302
+/PPSupplySans-Variable.ttf    https://acceso-integration.onrender.com/PPSupplySans-Variable.ttf    200
 
 # Proxy specific files from integration site
 /style.css    https://acceso-integration.onrender.com/style.css    200
