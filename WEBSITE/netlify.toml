@@ -14,14 +14,6 @@
   to = "/static/:splat"
   status = 200
 
-
-[[redirects]]
-  from = "/*.ttf"
-  to = "https://acceso-integration.onrender.com/:splat"
-  status = 200
-  force = true
-  headers = {Access-Control-Allow-Origin = "*"}
-
 # /map rules
 [[redirects]]
   from = "/map"
@@ -43,4 +35,5 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
 
