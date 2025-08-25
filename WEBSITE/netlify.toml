@@ -14,12 +14,6 @@
   to = "/static/:splat"
   status = 200
 
-# FONT RULES - MUST BE BEFORE THE CATCH-ALL /*
-[[redirects]]
-  from = "/PPSupplySans-Variable.ttf"
-  to = "https://www.google.com"
-  status = 302
-  force = true
 
 [[redirects]]
   from = "/*.ttf"
@@ -49,3 +43,4 @@
   to = "/.netlify/functions/framer-proxy/:splat"
   status = 200
   force = true
+
